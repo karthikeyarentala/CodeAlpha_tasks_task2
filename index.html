@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="music-player">
+        <header>
+            <h1>My Music Player</h1>
+            <input type="text" id="search-bar" placeholder="Search music...">
+        </header>
+        <main>
+            <section class="categories">
+                <h2>Categories</h2>
+                <ul id="categories-list">
+                    <li onclick="filterCategory('Duet')">Duet</li>
+                    <li onclick="filterCategory('Devotional')">Devotional</li>
+                    <li onclick="filterCategory('Motivational')">Motivational</li>
+                    <li onclick="filterCategory('Classical')">Classical</li>
+                </ul>
+            </section>
+
+            <section class="playlist">
+                <h2>Playlist</h2>
+                <ul id="playlist"></ul>
+            </section>
+
+            <section class="player-controls">
+                <div id="track-info">No track playing</div>
+                <div class="controls">
+                    <button onclick="playPrevious()">&#9664;&#9664;</button>
+                    <button id="play-pause" onclick="togglePlayPause()">&#9658;</button>
+                    <button onclick="playNext()">&#9654;&#9654;</button>
+                </div>
+                <input type="range" id="volume-control" min="0" max="1" step="0.01" onchange="setVolume(this.value)">
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
